@@ -2,6 +2,7 @@ import unittest
 import datetime
 from due_date_calculator import DueDateCalculator
 
+
 class TestDueDateCalculator(unittest.TestCase):
     def setUp(self):
         self.calculator = DueDateCalculator()
@@ -58,13 +59,19 @@ class TestDueDateCalculator(unittest.TestCase):
         submit_date = datetime.datetime(2025, 3, 10, 8, 0)  # Monday 8 AM
         with self.assertRaises(ValueError) as cm:
             self.calculator.calculate_due_date(submit_date, 8)
-        self.assertEqual(str(cm.exception), "Submit date must be during working hours (9AM to 5PM, Monday to Friday)")
+        self.assertEqual(
+            str(cm.exception),
+            "Submit date must be during working hours (9AM to 5PM, Monday to Friday)",
+        )
 
         # Submit at 5:01 PM (after working hours)
         submit_date = datetime.datetime(2025, 3, 10, 17, 1)  # Monday 5:01 PM
         with self.assertRaises(ValueError) as cm:
             self.calculator.calculate_due_date(submit_date, 8)
-        self.assertEqual(str(cm.exception), "Submit date must be during working hours (9AM to 5PM, Monday to Friday)")
+        self.assertEqual(
+            str(cm.exception),
+            "Submit date must be during working hours (9AM to 5PM, Monday to Friday)",
+        )
 
     def test_non_working_day_input(self):
         """Test with submit date on a non-working day."""
@@ -72,7 +79,10 @@ class TestDueDateCalculator(unittest.TestCase):
         submit_date = datetime.datetime(2025, 3, 15, 10, 0)  # Saturday 10 AM
         with self.assertRaises(ValueError) as cm:
             self.calculator.calculate_due_date(submit_date, 8)
-        self.assertEqual(str(cm.exception), "Submit date must be during working hours (9AM to 5PM, Monday to Friday)")
+        self.assertEqual(
+            str(cm.exception),
+            "Submit date must be during working hours (9AM to 5PM, Monday to Friday)",
+        )
 
     def test_negative_turnaround_time(self):
         """Test with negative turnaround time."""
@@ -90,6 +100,5 @@ class TestDueDateCalculator(unittest.TestCase):
         self.assertEqual(due_date, expected)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
-    
