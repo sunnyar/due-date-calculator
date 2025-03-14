@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "due_date_calculator"
+version = "1.0.0"
+description = "A due date calculator for issue tracking systems"
+authors = ["Sunny Arora <sunnyarora07@gmail.com>"]
+license = "MIT"
+packages = [{include = "due_date_calculator"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.0"
+pytest-cov = "^4.0"
+
+[tool.poetry.scripts]
+due-date-calc = "due_date_calculator.calculator:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,47 @@
+*.swp
+*.swo
+
+# emacs
+\#*\#
+.\#*
+
+# Python
+__pycache__/
+*.pyc
+
+# Visual Studio Code
+.vscode/*
+.vscode-server/*
+.vscode-studies
+.vscode-celery
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
+
+# Build and generated directories
+build/
+generated/
+.coverage
+
+# Environment files
+.env
+
+# Node
+node_modules/
+
+.idea
+
+.venv/
+.cache/
+
+
+.DS_Store
+.vscode
+.tmpdir
+
+.pytest_cache/*
