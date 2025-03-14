@@ -1,6 +1,6 @@
 import unittest
 import datetime
-from due_date_calculator.calculator import DueDateCalculator
+from due_date_calculator import DueDateCalculator
 
 class TestDueDateCalculator(unittest.TestCase):
     def setUp(self):

@@ -34,6 +34,22 @@ poetry install
 ```sh
 poetry run due-date-calc
 ```
+or
+
+```python
+from due_date_calculator import DueDateCalculator
+import datetime
+
+# Create a calculator instance
+calculator = DueDateCalculator()
+
+# Calculate a due date
+submit_date = datetime.datetime(2025, 3, 12, 14, 12)  # Wednesday 2:12 PM
+turnaround_hours = 16
+
+due_date = calculator.calculate_due_date(submit_date, turnaround_hours)
+print(f"Due date: {due_date}")  # Should be Friday 2:12 PM
+```
 
 ### **5. Running Tests**
 To run unit tests, use:
